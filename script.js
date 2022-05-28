@@ -13,17 +13,15 @@ class Sprite { //class to use for the snake and food
 }
 }
 
-const player = new Sprite({
-    x: 400, y: 350
-}); //Snake start position
+const player = new Sprite({ //creates the player
+    x: 400, y: 350 //Snake start position
+});
 
 player.draw() //calls the draw function to the player
 
-const food = new Sprite({
+const food = new Sprite({ //creates the food
     x: Math.floor(Math.random() * (canvas.width - 20)), //random x position for the food
     y: Math.floor(Math.random() * (canvas.height - 20)) //random y position for the food
 });
 
 food.draw() //calls the draw function to the food
-
-console.log(player);
