@@ -20,18 +20,17 @@ class Sprite { //class to use for the snake and food
 }
 }
 
-const player = new Sprite({ //creates the player
+const player = new Sprite({
     x: 400, y: 350 //Snake start position
 });
+player.draw() //creates the player
 
-player.draw() //calls the draw function to the player
-
-const food = new Sprite({ //creates the food
+const food = new Sprite({
     x: Math.floor(Math.random() * (canvas.width - 20)), //random x position for the food
     y: Math.floor(Math.random() * (canvas.height - 20)) //random y position for the food
 });
 
-food.draw() //calls the draw function to the food
+food.draw() //creates the food
 
 function changePlayerPosition() { //function to change the position of the player
     player.position.x += xVelocity;
@@ -43,5 +42,21 @@ function keyDown(event){
     if(event.keyCode === 38){   //up
         xVelocity = 0;
         yVelocity = -1;
+        console.log("click clack");
+    }
+    if(event.keyCode === 37){   //left
+        xVelocity = -1;
+        yVelocity = 0;
+        console.log("click clack");
+    }
+    if(event.keyCode === 39){   //right
+        xVelocity = 1;
+        yVelocity = 0;
+        console.log("click clack");
+    }
+    if(event.keyCode === 40){   //down
+        xVelocity = 0;
+        yVelocity = 1;
+        console.log("click clack");
     }
 }
