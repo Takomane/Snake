@@ -6,11 +6,11 @@ Day 1: Set up the HTML, CSS, and JS ✔️
 
 Day 2: Set up the snake, and Canvas ✔️
 
-Day 3: Make Snake Move
+Day 3: Make Snake Move ✔️
 
-Day 4: Make Snake move via key presses (via KeyboardEvent) ✔️(kinda) The key events work, but the snake doesn't move. The whole page does.
+Day 4: Make Snake move via key presses (via KeyboardEvent) ✔️(kinda) The key events work, but does not move the snake
 
-day 5: Set up Food & have it randomly appear (math.floor(random() * (max - min) + min) for how to have the food show up over the canvas? Maybe?) ✔️ (whoops went ahead of myself)
+day 5: Set up Food & have it randomly appear (math.floor(random() * (max - min) + min) for how to have the food show up over the canvas? Maybe?) ✔️
 
 Day 6: Make Snake grow ( ͡° ͜ʖ ͡°) (collisionDetection()?)
 
