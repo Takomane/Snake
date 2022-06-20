@@ -21,12 +21,18 @@ class Sprite { //class to use for the snake and food
 update() {
     this.draw()
     this.position.y += this.velocity.y;
-
+    this.position.x += this.velocity.x;
     if (this.position.y + this.height + this.velocity.y >= canvas.height) { //stops sprites from going down off the screen
         this.velocity.y = 0; //IF position of sprite it greater than or equal to the height of the canvas, then the velocity will be changed to 0 ayeee loops
     }
     if (this.position.y + this.velocity.y <= 0) { //stops the sprite from going up off the screen
-        this.velocity.y = 0;
+       this.velocity.y = 0;
+    }
+    if (this.position.x + this.width + this.velocity.x <= canvas.width) {
+        this.velocity.x = 0; //IF position of sprite it greater than or equal to the width of the canvas, then the velocity will be changed to 0 ayeee loops
+    }
+    if (this.position.x + this.velocity.x <= 0) {
+        this.velocity.x = 0;
     }
 }
 }
@@ -43,37 +49,13 @@ const player = new Sprite({
 
 const food = new Sprite({
     position: {
-    x: Math.floor(Math.random() * (canvas.width - 20)), //random x position for the food
-    y: Math.floor(Math.random() * (canvas.height - 20)) //random y position for the food
+    x: Math.floor(Math.random() * (canvas.width - 20)), //random position for the food
+    y: Math.floor(Math.random() * (canvas.height - 20))
 },
-velocity: {
-    x: 0, y: 0
+    velocity: {
+        x: 0, y: 0
 }
 });
-
-document.body.addEventListener('keydown', keyDown);
-function keyDown(event){
-    if(event.keyCode === 38){   //up
-        xVelocity = 0;
-        yVelocity = -1;
-        console.log("click clack");
-    }
-    if(event.keyCode === 37){   //left
-        xVelocity = -1;
-        yVelocity = 0;
-        console.log("click clack");
-    }
-    if(event.keyCode === 39){   //right
-        xVelocity = 1;
-        yVelocity = 0;
-        console.log("click clack");
-    }
-    if(event.keyCode === 40){   //down
-        xVelocity = 0;
-        yVelocity = 1;
-        console.log("click clack");
-    }
-}
 
 function animate() {
     window.requestAnimationFrame(animate);
@@ -84,3 +66,25 @@ function animate() {
 }
 
 animate();
+
+window.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'ArrowUp':
+            player.velocity.y = -1;
+            break
+    }
+    switch (event.key) {
+        case 'ArrowDown':
+            player.velocity.y = 1;
+            break
+    }
+    switch (event.key) {
+        case 'ArrowLeft':
+            player.velocity.x = -1;
+            break
+    }
+    switch (event.key) {
+        case 'ArrowRight':
+            player.velocity.x = 1;
+            break
+    }})

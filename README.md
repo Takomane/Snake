@@ -8,13 +8,13 @@ Day 2: Set up the snake, and Canvas ✔️
 
 Day 3: Make Snake Move ✔️
 
-Day 4: Make Snake move via key presses (via KeyboardEvent) ✔️(kinda) The key events work, but does not move the snake
+Day 4: Make Snake move via key presses (via KeyboardEvent) ✔️
 
 day 5: Set up Food & have it randomly appear (math.floor(random() * (max - min) + min) for how to have the food show up over the canvas? Maybe?) ✔️
 
 Day 6: Make Snake grow ( ͡° ͜ʖ ͡°) (collisionDetection()?)
 
-Day 7: Set up the game over logic
+Day 7: Set up the game over logic ✔️ was able to get the snake to stop when it hits the left wall, top and bottom, but not right.
 
 Day 8: Set up the game reset logic
 
