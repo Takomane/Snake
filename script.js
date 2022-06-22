@@ -24,15 +24,19 @@ update() {
     this.position.x += this.velocity.x;
     if (this.position.y + this.height + this.velocity.y >= canvas.height) { //stops sprites from going down off the screen
         this.velocity.y = 0; //IF position of sprite it greater than or equal to the height of the canvas, then the velocity will be changed to 0 ayeee loops
+        console.log(stop)
     }
     if (this.position.y + this.velocity.y <= 0) { //stops the sprite from going up off the screen
        this.velocity.y = 0;
+       console.log(stop)
     }
-    if (this.position.x + this.width + this.velocity.x <= canvas.width) {
-        this.velocity.x = 0; //IF position of sprite it greater than or equal to the width of the canvas, then the velocity will be changed to 0 ayeee loops
+    if (this.position.x + this.velocity.x >= canvas.width) {
+        this.velocity.x = 0; //IF position of sprite it less than or equal to the width of the canvas, then the velocity will be changed to 0 ayeee loops
+        console.log(stop)
     }
-    if (this.position.x + this.velocity.x <= 0) {
+    if (this.position.x + this.velocity.x <= 0) { //stops the sprite from going left off the screen
         this.velocity.x = 0;
+        console.log(stop)
     }
 }
 }

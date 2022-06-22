@@ -14,7 +14,7 @@ day 5: Set up Food & have it randomly appear (math.floor(random() * (max - min) 
 
 Day 6: Make Snake grow ( ͡° ͜ʖ ͡°) (collisionDetection()?)
 
-Day 7: Set up the game over logic ✔️ was able to get the snake to stop when it hits the left wall, top and bottom, but not right.
+Day 7: Set up the game over logic ✔️
 
 Day 8: Set up the game reset logic
 
