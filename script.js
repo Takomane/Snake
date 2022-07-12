@@ -18,6 +18,7 @@ class Sprite { //class to use for the snake and food
             ctx.fillStyle = "black"; //set the color of the sprite
             ctx.fillRect(this.position.x, this.position.y, 20, this.height); //size the sprite
 }
+
 update() {
     this.draw()
     this.position.y += this.velocity.y;
@@ -39,6 +40,18 @@ update() {
         console.log(stop)
     }
 }
+}
+class paused {
+    
+}
+
+function togglePause(){
+    if (paused){
+        paused = true;
+    } 
+    else if (paused){
+       paused= false;
+    }
 }
 
 const player = new Sprite({
@@ -76,19 +89,17 @@ window.addEventListener('keydown', (event) => {
         case 'ArrowUp':
             player.velocity.y = -1;
             break
-    }
-    switch (event.key) {
         case 'ArrowDown':
             player.velocity.y = 1;
             break
-    }
-    switch (event.key) {
         case 'ArrowLeft':
             player.velocity.x = -1;
             break
-    }
-    switch (event.key) {
         case 'ArrowRight':
             player.velocity.x = 1;
             break
-    }})
+        case 'p':
+            togglePause();
+            break
+    }
+})
